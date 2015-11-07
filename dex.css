@@ -1,0 +1,21 @@
+body {
+	background: blue;
+}
+
+a {
+	color: blue;
+}
+
+a.job {
+	color: blue;
+}
+
+#options {
+	background-color: red;
+	width: 300px;
+	padding: 15px; 
+}
+
+#output {
+	background-color: lightblue;
+}
