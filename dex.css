@@ -4,10 +4,6 @@ body {
 
 a {
 	color: blue;
-}
-
-a.job {
-	color: blue;
 	background-color: red;
 }
 
