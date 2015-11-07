@@ -8,7 +8,11 @@ var story = {
 	},
 	hello: {
 		text: 'you say hello',
-		options: ['do','not','pass']
+		options: ['continue','choose difrent option']
+	},
+	ok: {
+		text:''
+		options:''
 	}
 }
 
@@ -26,6 +30,11 @@ options.addEventListener('click', function  (e) {
 	
 	} else if (e.target.innerHTML === 'ignore') {
 		text.innerHTML = 'ignore this'
+	} else if (e.target.innerHTML === 'continue'){
+				text.innerHTML = story.start.text
+		options.innerHTML = ''
+		story.ok.options.forEach(function (item) {
+			options.innerHTML += '<li>' + item + '</li>'
 	} else {
 		text.innerHTML = story.start.text
 		options.innerHTML = ''
