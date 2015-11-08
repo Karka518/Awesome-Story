@@ -4,7 +4,7 @@ var options = document.getElementById('options')
 var story = {
 	start: {
 		text: 'You are walking along the street and you meet a hooded figure.',
-		options: ['say hello','ignore','reset']
+		options: ['say hello','ignore'],
 	},
 	hello: {
 		text: 'you say hello',
@@ -14,6 +14,9 @@ var story = {
 		text: 'you ignore the man',
 		options: ['continue','choose difrent option'],
 	},
+	continu: {
+		text
+	}
 }
 
 alert("hello Welcome to this site! Click options to go about story! Click reset to head home");
@@ -35,8 +38,12 @@ options.addEventListener('click', function  (e) {
 			options.innerHTML += '<li>' + item + '</li>'
 		})
 
-	} else if (e.target.innerHTML === 'ignore') {
-		text.innerHTML = 'ignore this'
+	} else if (e.target.innerHTML === 'continue') {
+		text.innerHTML = story.continueA.text
+				options.innerHTML = ''
+		story.continu.options.forEach(function (item) {
+			options.innerHTML += '<li>' + item + '</li>'
+		})
 
 	} else {
 		text.innerHTML = story.start.text
