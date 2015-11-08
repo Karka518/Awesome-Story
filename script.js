@@ -8,12 +8,12 @@ var story = {
 	},
 	hello: {
 		text: 'you say hello',
-		options: ['continue','choose difrent option']
+		options: ['continue','choose difrent option'],
 	},
-	ok: {
-		text:''
-		options:''
-	}
+	ignore: {
+		text: 'you ignore the man',
+		options: ['continue','choose difrent option'],
+	},
 }
 
 alert("hello Welcome to this site! Click options to go about story! Click reset to head home");
@@ -29,12 +29,15 @@ options.addEventListener('click', function  (e) {
 		})
 	
 	} else if (e.target.innerHTML === 'ignore') {
-		text.innerHTML = 'ignore this'
-	} else if (e.target.innerHTML === 'continue'){
-				text.innerHTML = story.start.text
-		options.innerHTML = ''
-		story.ok.options.forEach(function (item) {
+		text.innerHTML = story.ignore.text
+				options.innerHTML = ''
+		story.ignore.options.forEach(function (item) {
 			options.innerHTML += '<li>' + item + '</li>'
+		})
+
+	} else if (e.target.innerHTML === 'ignore') {
+		text.innerHTML = 'ignore this'
+
 	} else {
 		text.innerHTML = story.start.text
 		options.innerHTML = ''
