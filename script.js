@@ -10,9 +10,10 @@ var story = {
 		text: 'you say hello',
 		options: ['continue','choose difrent option'],
 	},
-	ok: {
-		text: 'woo'
-	}
+	ignore: {
+		text: 'you ignore the man',
+		options: ['continue','choose difrent option'],
+	},
 }
 
 alert("hello Welcome to this site! Click options to go about story! Click reset to head home");
@@ -27,6 +28,13 @@ options.addEventListener('click', function  (e) {
 			options.innerHTML += '<li>' + item + '</li>'
 		})
 	
+	} else if (e.target.innerHTML === 'ignore') {
+		text.innerHTML = story.ignore.text
+				options.innerHTML = ''
+		story.ignore.options.forEach(function (item) {
+			options.innerHTML += '<li>' + item + '</li>'
+		})
+
 	} else if (e.target.innerHTML === 'ignore') {
 		text.innerHTML = 'ignore this'
 
